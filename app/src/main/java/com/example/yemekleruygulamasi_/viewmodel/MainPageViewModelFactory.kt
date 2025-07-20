@@ -1,4 +1,11 @@
 package com.example.yemekleruygulamasi_.viewmodel
 
-class MainPageViewModelFactory {
+import android.app.Application
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+
+class MainPageViewModelFactory(var application: Application): ViewModelProvider.NewInstanceFactory() {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return MainPageViewModel(application) as T
+    }
 }
